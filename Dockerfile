@@ -1,7 +1,9 @@
 from ubuntu:latest
 
 WORKDIR backend-svr
+
 RUN apt-get update && apt-get install -y gnupg2
+
 RUN apt-get update && \
     apt-get install -y software-properties-common && \
     apt-get install -y wget && \
@@ -17,7 +19,11 @@ RUN apt install apt-transport-https -y
 
 RUN apt-get update
 
-RUN apt install dotnet-sdk-3.0 -y
+RUN wget http://ftp.us.debian.org/debian/pool/main/i/icu/libicu57_57.1-6+deb9u4_amd64.deb
+
+RUN dpkg -i libicu57_57.1-6+deb9u4_amd64.deb
+
+RUN apt install dotnet-sdk-3.1 -y
 
 COPY ./ ./
 
