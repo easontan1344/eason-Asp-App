@@ -2,10 +2,11 @@ from ubuntu:latest
 
 WORKDIR backend-svr
 
+RUN apt-get update 
+
+RUN apt-get install -y gnupg
 
 RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 871920D1991BC93C
-
-RUN apt-get update && apt-get install -y gnupg
 
 RUN apt-get update && \
     apt-get install -y software-properties-common && \
