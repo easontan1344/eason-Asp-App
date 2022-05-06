@@ -1,7 +1,5 @@
 from ubuntu:latest
 
-RUN  echo "    IdentityFile ~/.ssh/id_rsa" >> /etc/ssh/ssh_config
-
 WORKDIR backend-svr
 
 RUN apt-get update && \
