@@ -2,7 +2,7 @@ from ubuntu:latest
 
 WORKDIR backend-svr
 
-sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 871920D1991BC93C
+apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 871920D1991BC93C
 
 RUN apt-get update && \
     apt-get install -y software-properties-common && \
